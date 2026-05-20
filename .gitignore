@@ -1,0 +1,12 @@
+node_modules
+.pnpm-store
+.next
+out
+coverage
+playwright-report
+test-results
+.env*.local
+.data
+.data-e2e
+public/uploads
+npm-debug.log*
