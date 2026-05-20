@@ -232,8 +232,8 @@ export function getDashboardSummary({
     heartRateAverageAfter: average(after.map((response) => response.heartRateBpm)),
     stressAverageBefore: average(before.map((response) => Number(response.stressScore))),
     stressAverageAfter: average(after.map((response) => Number(response.stressScore))),
-    recentResponses: responses
-      .toSorted((a, b) => new Date(b.submittedAt).getTime() - new Date(a.submittedAt).getTime())
+    recentResponses: [...responses]
+      .sort((a, b) => new Date(b.submittedAt).getTime() - new Date(a.submittedAt).getTime())
       .slice(0, 10)
   };
 }

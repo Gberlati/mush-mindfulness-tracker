@@ -5,8 +5,8 @@ Mobile-first bilingual mindfulness event logging application built from [docs/SP
 ## Local Development
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm run dev
 ```
 
 The app uses local JSON persistence by default. Set the Supabase environment variables in `.env.local` to use Supabase-backed persistence.
@@ -21,7 +21,7 @@ Production should set `ADMIN_USERNAME`, `ADMIN_PASSWORD_HASH`, `ADMIN_SESSION_SE
 ## Verification
 
 ```bash
-npm test
-npm run build
-npm run test:e2e
+pnpm test
+pnpm run build
+pnpm run test:e2e
 ```

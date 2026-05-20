@@ -68,7 +68,7 @@ export function getLocalDataStore(): DataStore {
   return {
     async listEvents() {
       const data = await readData();
-      return data.events.toSorted((a, b) => new Date(a.startsAt).getTime() - new Date(b.startsAt).getTime());
+      return [...data.events].sort((a, b) => new Date(a.startsAt).getTime() - new Date(b.startsAt).getTime());
     },
     async getEvent(id) {
       const data = await readData();
@@ -85,7 +85,7 @@ export function getLocalDataStore(): DataStore {
     },
     async listResponses() {
       const data = await readData();
-      return data.responses.toSorted(
+      return [...data.responses].sort(
         (a, b) => new Date(b.submittedAt).getTime() - new Date(a.submittedAt).getTime()
       );
     },
